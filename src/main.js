@@ -16,7 +16,14 @@ const emails = rawText.match(emailRegex) || [];
 const hashtags = rawText.match(hashtagRegex) || [];
 
 console.log("Phones found:", phones);
-console.log("Cards found:", cards);
+// --- Mask sensitive card numbers for safe display ---
+const maskedCards = cards.map(card => {
+  const digitsOnly = card.replace(/[\s-]/g, ""); // strip spaces/dashes
+  const last4 = digitsOnly.slice(-4);
+  return "**** **** **** " + last4;
+});
+
+console.log("Cards found (masked):", maskedCards);
 console.log("Emails found:", emails);
 console.log("Hashtags found:", hashtags);
 const officialEmail = /@alueducation\.com$/;
@@ -31,3 +38,13 @@ const categorisedEmails = emails.map(email => {
 });
 
 console.log("Categorised emails:", categorisedEmails);
+// --- Security check: detect suspicious/malicious patterns ---
+const suspiciousPattern = /<script.*?>.*?<\/script>|javascript:|on\w+\s*=/gi;
+
+const suspiciousMatches = rawText.match(suspiciousPattern) || [];
+
+if (suspiciousMatches.length > 0) {
+  console.log("SECURITY WARNING: Potentially malicious content detected:", suspiciousMatches);
+} else {
+  console.log("No suspicious content detected.");
+}
