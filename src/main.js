@@ -19,3 +19,15 @@ console.log("Phones found:", phones);
 console.log("Cards found:", cards);
 console.log("Emails found:", emails);
 console.log("Hashtags found:", hashtags);
+const officialEmail = /@alueducation\.com$/;
+const alumniEmail = /@alumni\.alueducation\.com$/;
+const siEmail = /@si\.alueducation\.com$/;
+
+const categorisedEmails = emails.map(email => {
+  if (alumniEmail.test(email)) return { email, category: "alumni" };
+  if (siEmail.test(email)) return { email, category: "si" };
+  if (officialEmail.test(email)) return { email, category: "official" };
+  return { email, category: "other" };
+});
+
+console.log("Categorised emails:", categorisedEmails);
