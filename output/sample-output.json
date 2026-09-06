@@ -1,0 +1,42 @@
+{
+  "phones": [
+    "+250 723 385 908",
+    "0785358902",
+    "(+250) 793-610-100"
+  ],
+  "cards": [
+    "**** **** **** 1111",
+    "**** **** **** 1111",
+    "**** **** **** 1111"
+  ],
+  "emails": [
+    {
+      "email": "r.isaboke@alustudent.com",
+      "category": "other"
+    },
+    {
+      "email": "evariste.mugabe@alumni.alueducation.com",
+      "category": "alumni"
+    },
+    {
+      "email": "steven+abdul23@si.alueducation.com",
+      "category": "si"
+    },
+    {
+      "email": "praise.katega@alueducation.com",
+      "category": "official"
+    },
+    {
+      "email": "admin@aluedcuation.com",
+      "category": "other"
+    }
+  ],
+  "hashtags": [
+    "#ALUStudentLife",
+    "#TechSupport",
+    "#si_updates"
+  ],
+  "securityWarnings": [
+    "<script>alert('phishing')</script>"
+  ]
+}

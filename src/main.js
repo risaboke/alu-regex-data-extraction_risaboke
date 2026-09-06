@@ -48,3 +48,16 @@ if (suspiciousMatches.length > 0) {
 } else {
   console.log("No suspicious content detected.");
 }
+// --- Build structured output ---
+const output = {
+  phones: phones,
+  cards: maskedCards,
+  emails: categorisedEmails,
+  hashtags: hashtags,
+  securityWarnings: suspiciousMatches
+};
+
+// --- Write to output file ---
+fs.writeFileSync('./output/sample-output.json', JSON.stringify(output, null, 2));
+
+console.log("\n Results written to output/sample-output.json");
